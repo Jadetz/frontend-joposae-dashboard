@@ -1,7 +1,8 @@
 import { CONSULTATION_STATUSES } from "../lib/consultationStatus.js";
 
 // Used when the API sends a status this dashboard does not know yet.
-const UNKNOWN_STATUS_CLASS = "bg-neutral-soft ring-neutral-line text-neutral-ink";
+const UNKNOWN_STATUS_CLASS =
+  "bg-neutral-soft ring-neutral-line text-neutral-ink";
 
 function StatusChip({ status }) {
   const { label, chipClass } = CONSULTATION_STATUSES[status] ?? {
@@ -10,7 +11,7 @@ function StatusChip({ status }) {
   };
   return (
     <span
-      className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset ${chipClass}`}
+      className={`inline-block rounded-full px-2.5 py-1.5 text-xs font-medium ring-1 ring-inset whitespace-nowrap ${chipClass}`}
     >
       {label}
     </span>
