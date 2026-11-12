@@ -1,0 +1,204 @@
+/*
+ * Location: src/index.css (imported once in main.jsx).
+ * Tailwind CSS v4 theme for the JopoSae dashboard.
+ * Source: "Dashboard JopoSae" mockup (claude.ai), November 2026.
+ *
+ * Rules:
+ * - One color, one meaning. Use only the colors below; the default Tailwind
+ *   palette is switched off, so classes like bg-red-500 do not exist here.
+ * - Amber text on white uses text-brand-ink (#7a4b00). #fca311 is too light for text.
+ * - Buttons are never dark and never floating (no large drop shadows).
+ * - Light theme only for now.
+ * - Transparent shades use the opacity modifier, e.g. bg-navy/8, ring-white/60.
+ */
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Turn off the default palette, then define ours. */
+  --color-*: initial;
+  --color-white: #ffffff;
+
+  /* ---------- Brand ---------- */
+  --color-brand: #fca311; /* login side panel, "never signed in" dot */
+  --color-brand-from: #fdb33c; /* gradient top: sidebar, primary button */
+  --color-brand-to: #f29a0b; /* gradient bottom */
+  --color-brand-edge: #d88a00; /* primary button border, radio/checkbox accent */
+  --color-brand-ink: #7a4b00; /* amber text on white: eyebrow labels, "Data contoh" */
+  --color-navy: #14213d; /* headings, text on amber, "Baru" pill, focus ring */
+
+  /* Text placed on the amber sidebar / login panel */
+  --color-on-brand: #1f2433; /* sidebar menu items */
+  --color-on-brand-muted: #5a4310; /* section labels, subtitles */
+  --color-on-brand-soft: #4d3a0e; /* login panel descriptions */
+
+  /* ---------- Surfaces ---------- */
+  --color-page: #efefec; /* app background behind cards */
+  --color-card: #ffffff; /* cards, panels, table containers */
+  --color-sunken: #f3f3f0; /* info boxes, inset panels */
+  --color-field: #fafaf8; /* text inputs, light row stripes */
+  --color-row-muted: #f8f8f6; /* rows waiting on something (invited admin) */
+  --color-track: #e4e4e0; /* segmented control / filter track */
+  --color-selected: #fff6e3; /* selected row or option (light amber) */
+  --color-selected-line: #f2c977;
+
+  /* ---------- Borders and dividers ---------- */
+  --color-line: #e2e1db; /* card border */
+  --color-line-strong: #d3d2cb; /* card bottom edge, secondary button border */
+  --color-line-stronger: #c4c3bb; /* secondary button bottom edge */
+  --color-line-field: #dcdbd4; /* inputs, radio cards */
+  --color-line-dashed: #b8b7af; /* empty avatar placeholder */
+  --color-divider: #ededea; /* rows inside a card */
+  --color-divider-soft: #f0f0ec; /* table rows */
+  --color-divider-timeline: #e7e6e1; /* timeline connector lines */
+
+  /* ---------- Text ---------- */
+  --color-heading: #14213d;
+  --color-body: #1f2433;
+  --color-secondary: #3d4556;
+  --color-muted: #5b6475;
+  --color-faint: #8a8f9a; /* empty value placeholder "—" */
+  --color-link: #22365e; /* hover: text-navy */
+
+  /* ---------- Tones: chips, tags, banners (soft = bg, line = ring, ink = text) ---------- */
+  --color-neutral-soft: #efefec;
+  --color-neutral-line: #dcdcd6;
+  --color-neutral-ink: #3d4556;
+
+  --color-info-soft: #e6ebf5;
+  --color-info-line: #c9d3e6;
+  --color-info-ink: #22365e;
+
+  --color-info-strong-soft: #dce7f7;
+  --color-info-strong-line: #b7cae8;
+  --color-info-strong-ink: #1f3f73;
+
+  --color-warning-soft: #fff1d6;
+  --color-warning-line: #f2d49a;
+  --color-warning-ink: #7a4b00;
+
+  --color-danger-soft: #f7e6e1;
+  --color-danger-line: #e5c2b9;
+  --color-danger-ink: #7e2c1f;
+
+  --color-success-soft: #e3f1ea;
+  --color-success-line: #c3e0d1;
+  --color-success-ink: #24674a;
+
+  /*
+   * Which tone each status uses. Chip classes:
+   *   bg-<tone>-soft ring-1 ring-inset ring-<tone>-line text-<tone>-ink
+   *
+   * Consultation status (Konsultasi page)
+   *   link_generated "Link terkirim"     -> info
+   *   pending        "Sedang ditangani"  -> info-strong
+   *   closed         "Selesai"           -> success
+   *   cancelled      "Batal"             -> neutral
+   *   aging "Perlu dicek"                -> warning
+   *   aging "Terlambat"                  -> danger
+   *
+   * Session reason tags (Percakapan, Per sesi)
+   *   bot couldn't answer                -> danger
+   *   didn't choose / stopped at screen  -> neutral
+   *   after reading the answer           -> success
+   *   handed off to admin                -> info
+   *   still active                       -> success
+   *
+   * Reply source chip (bot bubble)
+   *   llm         "Template dipilih AI"         -> info
+   *   backup_rule "Aturan cadangan · AI gagal"  -> warning
+   *
+   * Error level (Kesehatan sistem)
+   *   critical "Kritis"     -> danger
+   *   warning  "Peringatan" -> warning
+   *
+   * FAQ history diff
+   *   deleted words -> bg-danger-soft text-danger-ink line-through
+   *   added words   -> bg-success-soft text-success-ink
+   */
+
+  /* ---------- Banners (stronger text than chips; bg and border use the tone) ---------- */
+  --color-danger-title: #5a1a10;
+  --color-danger-body: #6b2418;
+  --color-danger-icon: #9a3a2a;
+  --color-warning-banner: #fff6e3; /* warning banner bg, border uses warning-line */
+  --color-warning-title: #5a3600;
+  --color-warning-body: #6b4100;
+  --color-success-from: #eaf5ef; /* "bot online" banner gradient, border uses success-line */
+  --color-success-to: #dfefe6;
+  --color-success-body: #2d5a45;
+
+  /* ---------- Danger button (e.g. "Cabut akses"), white bg ---------- */
+  --color-danger-btn-line: #e0bdb4;
+  --color-danger-btn-line-bottom: #d4aea4;
+  --color-danger-btn-ink: #8e3324;
+
+  /* ---------- Status dots ---------- */
+  --color-dot-live: #2f8a5f; /* active session, live connection */
+  --color-dot-reconnecting: #c77f00; /* live socket disconnected */
+  --color-dot-problem: #b4473a; /* sidebar "Kesehatan sistem" has an issue */
+
+  /* ---------- Highlight card (featured KPI) ---------- */
+  --color-highlight-from: #fff6e3;
+  --color-highlight-to: #ffebc4;
+  --color-highlight-line: #f2c977;
+  --color-highlight-line-bottom: #e2ae52;
+
+  /* ---------- Avatars ---------- */
+  --color-avatar-owner: #ffe3a8; /* text uses brand-ink; engineer avatar uses info tone */
+
+  /* ---------- Chat bubbles: bot = warning-soft + warning-line, customer = card + line ---------- */
+  --color-bubble-bot-edge: #e8c27a; /* bot bubble bottom border */
+
+  /* ---------- Charts ---------- */
+  --color-chart-resolved: #e39600; /* selesai di bot */
+  --color-chart-handed-off: #9c5800; /* dialihkan ke admin */
+  --color-chart-active: #f6d79c; /* masih berjalan */
+
+  /* ---------- WA connection strip (24 hours) ---------- */
+  --color-strip-on: #cfe6d9;
+  --color-strip-off: #b4412f;
+
+  /* ---------- Shadows ---------- */
+  --shadow-card: 0 1px 2px rgb(20 33 61 / 0.05);
+  --shadow-highlight: 0 1px 2px rgb(164 99 0 / 0.08);
+  --inset-shadow-sunken: inset 0 1px 2px rgb(20 33 61 / 0.06);
+  --inset-shadow-track: inset 0 1px 2px rgb(20 33 61 / 0.1);
+  --inset-shadow-gloss: inset 0 1px 0 rgb(255 255 255 / 0.4); /* top shine on primary button */
+
+  /* White on chart-resolved is only 2.43:1. Keep bar labels bold, >= 14.5px, with this shadow. */
+  --text-shadow-bar: 0 1px 1px rgb(80 45 0 / 0.35);
+}
+
+/* Gradients have no theme namespace, so they are custom utilities. */
+@utility bg-brand-gradient {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-brand-from) 0%,
+    var(--color-brand-to) 100%
+  );
+}
+
+@utility bg-highlight-gradient {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-highlight-from) 0%,
+    var(--color-highlight-to) 100%
+  );
+}
+
+@utility bg-success-gradient {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-success-from) 0%,
+    var(--color-success-to) 100%
+  );
+}
+
+@layer base {
+  body {
+    @apply bg-page font-sans text-body;
+  }
+}
