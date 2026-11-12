@@ -11,7 +11,7 @@ function StatusChip({ status }) {
   };
   return (
     <span
-      className={`inline-block rounded-full px-2.5 py-1.5 text-xs font-medium ring-1 ring-inset whitespace-nowrap ${chipClass}`}
+      className={`inline-block rounded-full px-3 py-1.5 text-xs font-medium ring-1 ring-inset whitespace-nowrap ${chipClass}`}
     >
       {label}
     </span>
