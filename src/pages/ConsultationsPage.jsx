@@ -11,7 +11,7 @@ const FILTERS = [
     label: CONSULTATION_STATUSES[status].tabLabel,
   })),
 ];
-// How manny rows a filter tab would show
+// How many rows a filter tab would show.
 const countFor = (consultations, filterValue) =>
   filterValue === "all"
     ? consultations.length
