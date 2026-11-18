@@ -11,7 +11,7 @@ const FILTERS = [
     label: CONSULTATION_STATUSES[status].tabLabel,
   })),
 ];
-// How manny rows a filter tab would show
+// How many rows a filter tab would show
 const countFor = (consultations, filterValue) =>
   filterValue === "all"
     ? consultations.length
@@ -61,7 +61,7 @@ function ConsultationsPage() {
             onClick={() => setStatusFilter(filter.value)}
             className={`min-h-9.5 rounded-lg border px-3.5 text-sm whitespace-nowrap text-navy ${
               statusFilter === filter.value
-                ? "border-brand-edge bg-brand-gradient font-extrabold inset-shadow-gloss"
+                ? "border-transparent bg-brand font-semibold hover:bg-brand-hover"
                 : "border-transparent font-semibold"
             }`}
           >
