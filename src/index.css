@@ -8,6 +8,13 @@
  *   palette is switched off, so classes like bg-red-500 do not exist here.
  * - Amber text on white uses text-brand-ink (#7a4b00). #fca311 is too light for text.
  * - Buttons are never dark and never floating (no large drop shadows).
+ * - Buttons are flat (updated 2026-11-18): a solid fill or a plain 1px outline on all
+ *   four sides. No gradient, no top shine, no darker bottom edge. Label is font-semibold.
+ *   Every button has a hover color:
+ *     primary   bg-brand text-navy, hover:bg-brand-hover
+ *     secondary bg-white border border-line-strong text-navy, hover:bg-sunken
+ *     danger    bg-white border border-danger-btn-line text-danger-btn-ink, hover:bg-danger-soft
+ *   A selected tab or filter uses the primary look.
  * - Light theme only for now.
  * - Transparent shades use the opacity modifier, e.g. bg-navy/8, ring-white/60.
  */
@@ -22,10 +29,11 @@
   --color-white: #ffffff;
 
   /* ---------- Brand ---------- */
-  --color-brand: #fca311; /* login side panel, "never signed in" dot */
-  --color-brand-from: #fdb33c; /* gradient top: sidebar, primary button */
+  --color-brand: #fca311; /* login side panel, primary button, selected tab, "never signed in" dot */
+  --color-brand-hover: #e39600; /* primary button and selected tab on hover */
+  --color-brand-from: #fdb33c; /* gradient top: sidebar only */
   --color-brand-to: #f29a0b; /* gradient bottom */
-  --color-brand-edge: #d88a00; /* primary button border, radio/checkbox accent */
+  --color-brand-edge: #d88a00; /* radio/checkbox accent */
   --color-brand-ink: #7a4b00; /* amber text on white: eyebrow labels, "Data contoh" */
   --color-navy: #14213d; /* headings, text on amber, "Baru" pill, focus ring */
 
@@ -46,8 +54,8 @@
 
   /* ---------- Borders and dividers ---------- */
   --color-line: #e2e1db; /* card border */
-  --color-line-strong: #d3d2cb; /* card bottom edge, secondary button border */
-  --color-line-stronger: #c4c3bb; /* secondary button bottom edge */
+  --color-line-strong: #d3d2cb; /* card bottom edge, secondary button border (all sides) */
+  --color-line-stronger: #c4c3bb; /* spare: buttons no longer have a darker bottom edge */
   --color-line-field: #dcdbd4; /* inputs, radio cards */
   --color-line-dashed: #b8b7af; /* empty avatar placeholder */
   --color-divider: #ededea; /* rows inside a card */
@@ -132,7 +140,7 @@
 
   /* ---------- Danger button (e.g. "Cabut akses"), white bg ---------- */
   --color-danger-btn-line: #e0bdb4;
-  --color-danger-btn-line-bottom: #d4aea4;
+  --color-danger-btn-line-bottom: #d4aea4; /* spare: buttons no longer have a darker bottom edge */
   --color-danger-btn-ink: #8e3324;
 
   /* ---------- Status dots ---------- */
@@ -166,7 +174,7 @@
   --shadow-highlight: 0 1px 2px rgb(164 99 0 / 0.08);
   --inset-shadow-sunken: inset 0 1px 2px rgb(20 33 61 / 0.06);
   --inset-shadow-track: inset 0 1px 2px rgb(20 33 61 / 0.1);
-  --inset-shadow-gloss: inset 0 1px 0 rgb(255 255 255 / 0.4); /* top shine on primary button */
+  --inset-shadow-gloss: inset 0 1px 0 rgb(255 255 255 / 0.4); /* spare: primary button is flat now */
 
   /* White on chart-resolved is only 2.43:1. Keep bar labels bold, >= 14.5px, with this shadow. */
   --text-shadow-bar: 0 1px 1px rgb(80 45 0 / 0.35);
