@@ -59,10 +59,8 @@ function ConsultationsPage() {
             type="button"
             aria-pressed={statusFilter === filter.value}
             onClick={() => setStatusFilter(filter.value)}
-            className={`min-h-9.5 rounded-lg border px-3.5 text-sm whitespace-nowrap text-navy ${
-              statusFilter === filter.value
-                ? "border-transparent bg-brand font-semibold"
-                : "border-transparent font-semibold"
+            className={`min-h-9.5 rounded-lg border border-transparent px-3.5 text-sm font-semibold whitespace-nowrap text-navy ${
+              statusFilter === filter.value ? "bg-brand" : ""
             }`}
           >
             {filter.label}

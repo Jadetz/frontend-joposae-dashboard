@@ -14,7 +14,8 @@
  *     primary   bg-brand text-navy, hover:bg-brand-hover
  *     secondary bg-white border border-line-strong text-navy, hover:bg-sunken
  *     danger    bg-white border border-danger-btn-line text-danger-btn-ink, hover:bg-danger-soft
- *   A selected tab or filter uses the primary look.
+ *   A selected tab or filter uses the primary fill (bg-brand) but no hover;
+ *   tabs and filters never change color on hover.
  * - Light theme only for now.
  * - Transparent shades use the opacity modifier, e.g. bg-navy/8, ring-white/60.
  */
