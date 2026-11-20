@@ -61,7 +61,7 @@ function ConsultationsPage() {
             onClick={() => setStatusFilter(filter.value)}
             className={`min-h-9.5 rounded-lg border px-3.5 text-sm whitespace-nowrap text-navy ${
               statusFilter === filter.value
-                ? "border-transparent bg-brand font-semibold hover:bg-brand-hover"
+                ? "border-transparent bg-brand font-semibold"
                 : "border-transparent font-semibold"
             }`}
           >
