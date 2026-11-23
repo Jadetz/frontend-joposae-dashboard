@@ -30,7 +30,9 @@ function GoogleSignInButton({ clientId, onCredential, onLoadError }) {
           shape: "rectangular",
           text: "signin_with",
           locale: "id",
-          width: Math.min(400, container.clientWidth),
+          // 348 px fits both the phone sheet and the desktop card,
+          // so switching layouts after the button is drawn never overflows.
+          width: Math.min(348, container.clientWidth),
         });
       })
       .catch(() => {
