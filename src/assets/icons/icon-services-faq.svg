@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 72 72" width="72" height="72">
+<g transform="rotate(-4 30 29)">
+<g transform="translate(6 6)"><path d="M 16 7 H 44 Q 54 7 54 17 V 31 Q 54 41 44 41 H 26 L 15 51 L 16.5 41 Q 6 40 6 31 V 17 Q 6 7 16 7 Z" fill="#E39600" stroke="#1F2433" stroke-width="3.5" stroke-linejoin="round"></path></g>
+<path d="M 16 7 H 44 Q 54 7 54 17 V 31 Q 54 41 44 41 H 26 L 15 51 L 16.5 41 Q 6 40 6 31 V 17 Q 6 7 16 7 Z" transform="translate(1.5 2)" fill="#1F2433" stroke="#1F2433" stroke-width="3.5" stroke-linejoin="round"></path>
+<path d="M 16 7 H 44 Q 54 7 54 17 V 31 Q 54 41 44 41 H 26 L 15 51 L 16.5 41 Q 6 40 6 31 V 17 Q 6 7 16 7 Z" fill="#FFF6E3" stroke="#1F2433" stroke-width="3.5" stroke-linejoin="round"></path>
+<path d="M14.06 30H17.02V26.26H21.27V23.94H17.02V21.47H21.73V19.09H14.06ZM22.85 30H26.16L26.76 27.91H30.12L30.75 30H34.1L30.43 19.09H26.39ZM27.39 25.69C27.77 24.36 28.08 22.94 28.38 21.51C28.71 22.94 29.06 24.36 29.46 25.69ZM40.65 30.15C41.36 30.15 42.04 30.04 42.65 29.82L43.51 30.81H46.13L44.41 28.73C45.37 27.78 45.96 26.37 45.96 24.55C45.96 20.9 43.62 18.94 40.65 18.94C37.67 18.94 35.35 20.9 35.35 24.55C35.35 28.17 37.67 30.15 40.65 30.15ZM39.76 25.96 40.97 27.55C40.87 27.56 40.76 27.57 40.65 27.57C39.19 27.57 38.4 26.51 38.4 24.55C38.4 22.59 39.19 21.52 40.65 21.52C42.13 21.52 42.91 22.59 42.91 24.55C42.91 25.36 42.77 26.02 42.51 26.51L42.06 25.96Z" fill="#1F2433"></path>
+<path d="M 12 13 Q 14 10 18 10" fill="none" stroke="#FFF6E3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+</g>
+</svg>
