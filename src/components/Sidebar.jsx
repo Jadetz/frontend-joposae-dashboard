@@ -91,7 +91,7 @@ export function UserCard() {
       <button
         type="button"
         onClick={logout}
-        className="inline-flex min-h-10 items-center justify-center rounded-xl border border-line-strong bg-white px-4 text-sm font-semibold text-navy hover:bg-sunken"
+        className="inline-flex min-h-10 items-center justify-center rounded-xl bg-logout px-4 text-sm font-semibold text-white hover:bg-logout-hover"
       >
         Keluar
       </button>
