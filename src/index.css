@@ -144,6 +144,10 @@
   --color-danger-btn-line-bottom: #d4aea4; /* spare: buttons no longer have a darker bottom edge */
   --color-danger-btn-ink: #8e3324;
 
+  /* ---------- Logout button (sidebar and phone menu), white text ---------- */
+  --color-logout: #c81e1e;
+  --color-logout-hover: #a51818;
+
   /* ---------- Status dots ---------- */
   --color-dot-live: #2f8a5f; /* active session, live connection */
   --color-dot-reconnecting: #c77f00; /* live socket disconnected */
